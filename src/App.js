@@ -27,8 +27,6 @@ function App() {
     }
   };
 
-  const isFormValid = username.trim() && password.trim();
-
   return (
     <div className="app">
       <div className="login-container">
@@ -55,6 +53,7 @@ function App() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter your username"
+                required
               />
             </div>
 
@@ -69,14 +68,11 @@ function App() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
+                required
               />
             </div>
 
-            <button
-              type="submit"
-              className={`submit-btn ${!isFormValid ? "disabled" : ""}`}
-              disabled={!isFormValid}
-            >
+            <button type="submit" className="submit-btn">
               Submit
             </button>
           </form>
